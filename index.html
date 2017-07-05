@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>David Palmer</title>
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link href="styles.css" rel="stylesheet" type="text/css">
+<script src="scripts.js" type="text/javascript"></script>
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+
+<body>
+<div id="background"></div>
+<div id="blocker"></div>
+<div class="card">
+	<div class="name">David Palmer</div>
+	<div class="subtitle">Programmer/Developer</div>
+	<div class=="location">Christchurch, New Zealand</div>
+	<div class="skills"></div>
+	<div class="contacts">
+		<table>
+		<tbody>
+		<tr>
+		<td class="contactlabel">email:</td>
+		<td><script type="text/javascript">
+		document.write('<a href="mai' + 'lto:dav' + 'e@clovent' + 't.net">da' + 've@clov' + 'entt.net</a>');
+		</script></td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="headshot"><a href="davidpalmer.vcf"><img class="round" src="me.jpg" alt="headshot"/></a></div>
+</div>
+<script type="text/javascript">
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('background'), {
+    zoom: 11,
+    center: {lat: -43.5515188, lng: 172.8344737},
+    disableDefaultUI: true
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ38TZ2GM_48vMOjm86O-CE7CMB4NRHNU&callback=initMap"
+    async defer></script>
+</body>
+</html>

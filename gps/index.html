@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GPS Diagnostics</title>
+<meta name="viewport"
+content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+<script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <h1>GPS Diagnostics</h1>
+  <dl class="dl-horizontal">
+    <dt>Latitude</dt>
+    <dd id="lat">...</dd>
+    <dt>Longitude</dt>
+    <dd id="long">...</dd>
+    <dt>Accuracy</dt>
+    <dd id="acc">...</dd>
+    <dt>Altitude</dt>
+    <dd id="alt">...</dd>
+    <dt>Alt. Accuracy</dt>
+    <dd id="altacc">...</dd>
+    <dt>Heading</dt>
+    <dd id="heading">...</dd>
+    <dt>Speed</dt>
+    <dd id="speed">...</dd>
+  </dl>
+  <span id="timestamp">No location returned yet</span>
+</div>
+<div id="map"></div>
+<script>
+
+$(document).ready(function() {
+  function getLocation() {
+      if (navigator.geolocation) {
+        console.info("location available, continuing")
+        navigator.geolocation.watchPosition(showPosition);
+      } else {
+          alert("Geolocation is not supported by this browser.");
+      }
+  }
+  function showPosition(position) {
+    console.info("updating location at  " + position.timestamp)
+    console.info("updated location information", position)
+    $("#lat").html(position.coords.latitude);
+    $("#long").html(position.coords.longitude);
+    $("#acc").html(position.coords.accuracy === null ? '<span class="bg-danger">INVALID</span>' : "<span class=\"" + accuracyStyle(position.coords.accuracy) + "\">&plusmn;" + round(position.coords.accuracy, 4) + "m</span>");
+    $("#alt").html(position.coords.altitude === null ? '<span class="bg-danger">INVALID</span>' : round(position.coords.altitude, 4) + "m");
+    $("#altacc").html(position.coords.altitudeAccuracy === null ? '<span class="bg-danger">INVALID</span>' : "&plusmn;" + round(position.coords.altitudeAccuracy, 4) + "m");
+    $("#heading").html(position.coords.heading === null ? '<span class="bg-danger">INVALID</span>' : round(position.coords.heading, 4) + "&deg;");
+    $("#speed").html(position.coords.speed === null ? '<span class="bg-danger">INVALID</span>' : round(position.coords.speed, 4) + " m/s");
+    $("#timestamp").html("Last updated: " + getDateTimeFromTimestamp(position.timestamp));
+  }
+
+  function getDateTimeFromTimestamp(unixTimeStamp) {
+    var date = new Date(unixTimeStamp);
+    return ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + ':' + ('0' + date.getSeconds()).slice(-2);
+  }
+
+  function accuracyStyle(accuracy) {
+    if (accuracy < 11) {
+      return "bg-success";
+    } else if (accuracy < 51) {
+      return "bg-warning";
+    } else {
+      return "bg-danger";
+    }
+  }
+
+  round = function(number, precision) {
+    var factor = Math.pow(10, precision);
+    var tempNumber = number * factor;
+    var roundedTempNumber = Math.round(tempNumber);
+    return roundedTempNumber / factor;
+  };
+  getLocation();
+});
+</script>
+</body>
+</html>
