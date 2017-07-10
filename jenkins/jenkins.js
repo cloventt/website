@@ -59,11 +59,11 @@ var updateBuildList = function () {
     $.getJSON(jobUrl, function (json) {
         $("#noJson").remove();
         var responseHash = new String(JSON.stringify(json)).hashCode()
-        if (responseHash == jenkins.lastHash && jenkins.lastHeight == jenkins.totalHeight && jenkins.lastWidth == jenkins.totalWidth) {
+        if (responseHash == jenkins.lastHash && jenkins.lastHeight === jenkins.totalHeight && jenkins.lastWidth === jenkins.totalWidth) {
             console.info("Hash is the same (" + jenkins.lastHash + ") no need to redraw");
         }
         else {
-            console.info("New info! (" + jenkins.lastHash + " -> " + jenkins.responseHash + ") redrawing.");
+            console.info("New info! (" + jenkins.lastHash + " -> " + responseHash + ") redrawing.");
             jenkins.lastHash = responseHash;
             $(".jobNode").remove();
             window.jsonResponse = json;
