@@ -14,6 +14,7 @@ $(document).ready(function () {
     $('#jsRender').remove();
     updateBuildList();
     $(window).on("resize", resize);
+    $(window).on("orientationchange", resize);
 });
 
 String.prototype.hashCode = function () {
@@ -72,8 +73,8 @@ var updateBuildList = function () {
                 var status = job["color"].replace("_", " ");
                 buildList.append('<div class="jobNode ' + status + '">' + jobName + '</div>');
             }
+            resize();
         }
-        resize();
         setTimeout(updateBuildList, 10000);
     });
 };
