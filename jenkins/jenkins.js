@@ -59,7 +59,7 @@ var updateBuildList = function () {
     $.getJSON(jobUrl, function (json) {
         $("#noJson").remove();
         var responseHash = new String(JSON.stringify(json)).hashCode()
-        if (responseHash == jenkins.lastHash && jenkins.lastHeight === jenkins.totalHeight && jenkins.lastWidth === jenkins.totalWidth) {
+        if (responseHash === jenkins.lastHash) {
             console.info("Hash is the same (" + jenkins.lastHash + ") no need to redraw");
         }
         else {
