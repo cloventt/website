@@ -40,7 +40,6 @@ var resize = function() {
       totalLength += $(this).text().length;
   });
 
-
   for (i = 0; i < window.jsonResponse["jobs"].length; i++) {
       totalInverseLength += totalLength / window.jsonResponse["jobs"][i]["name"].length;
   }
