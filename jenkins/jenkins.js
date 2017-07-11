@@ -33,8 +33,8 @@ String.prototype.hashCode = function () {
 var resize = function() {
   var buildList = $('#buildList');
   var totalInverseLength = 0;
-  var totalWidth = window.width();
-  var totalHeight = window.height();
+  var totalWidth = $(window).width();
+  var totalHeight = $(window).height();
   var totalLength = 0;
   $("#buildList .jobNode").each(function() {
       totalLength += $(this).text().length;
