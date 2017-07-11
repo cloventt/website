@@ -33,12 +33,13 @@ String.prototype.hashCode = function () {
 var resize = function() {
   var buildList = $('#buildList');
   var totalInverseLength = 0;
-  var totalWidth = buildList.width();
-  var totalHeight = buildList.height();
+  var totalWidth = window.width();
+  var totalHeight = window.height();
   var totalLength = 0;
   $("#buildList .jobNode").each(function() {
       totalLength += $(this).text().length;
   });
+
 
   for (i = 0; i < window.jsonResponse["jobs"].length; i++) {
       totalInverseLength += totalLength / window.jsonResponse["jobs"][i]["name"].length;
