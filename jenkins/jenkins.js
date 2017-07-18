@@ -40,16 +40,27 @@ var resize = function() {
       totalLength += $(this).text().length;
   });
 
+  $("#buildList .jobNode").each(function() {
+      totalInverseLength += totalLength / $(this).text().length;
+  });
 
-  for (i = 0; i < window.jsonResponse["jobs"].length; i++) {
-      totalInverseLength += totalLength / window.jsonResponse["jobs"][i]["name"].length;
-  }
   $(".jobNode").each(function() {
     var jobName = $(this).text().length;
     var divHeight = (((totalLength / jobName) / totalInverseLength) * totalHeight) - 4;//border is 2px
     $(this).css({"font-size": Math.min((divHeight * 0.8), (totalWidth/jobName)*1.5) + "px", "height": divHeight + "px", "line-height": divHeight + "px"});
   });
 };
+
+// var releasing = function() {
+//   var jobUrl = jenkins.jenkinsUrl + "/job/release/api/json?tree=color";
+//   $.getJSON(jobUrl, function (json) {
+//     if (json["color"].indexOf("anime") !== -1) {
+//       var status = json.color.replace("_", " ");
+//       $(".jobNode").first().insertBefore('<div class="jobNode ' + status + '">RELEASING!</div>');
+//       console.log(json);
+//     }
+//   });
+// }
 
 var updateBuildList = function () {
     var jenkins = window.jenkins;
@@ -71,6 +82,14 @@ var updateBuildList = function () {
                 var job = json["jobs"][i];
                 var jobName = job["name"];
                 var status = job["color"].replace("_", " ");
+
+                if (jobName === "release" ) {
+                  if (status.indexOf("anime") === -1) {
+                    continue;
+                  }
+                  buildList.prepend('<div class="jobNode release ' + status + '">            RELEASING            </div>');
+                  continue;
+                }
                 buildList.append('<div class="jobNode ' + status + '">' + jobName + '</div>');
             }
             resize();
