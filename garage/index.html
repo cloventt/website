@@ -82,15 +82,14 @@ $(document).ready(function() {
     let deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/trigger";
     $.ajax({
       url: deviceUrl,
-      error: function(){
-          console.log("trigger failed: request to " + deviceUrl + " failed");
-          return false;
+      error: function(xhr, textStatus, errorThrown){
+        console.log('STATUS: '+textStatus+'\nERROR THROWN: '+errorThrown);
       },
       success: function(data){
         console.log(data);
         return true;
       },
-      timeout: 500 // sets timeout to 3 seconds
+      timeout: 10000 // sets timeout to 3 seconds
     });
   }
 
@@ -98,13 +97,13 @@ $(document).ready(function() {
     let deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/status";
     $.ajax({
       url: deviceUrl,
-      error: function(data){
-          console.log("status failed: request to " + deviceUrl + " failed");
-          return false;
+      error: function(xhr, textStatus, errorThrown){
+        console.log('STATUS: '+textStatus+'\nERROR THROWN: '+errorThrown);
+        return false;
       },
       success: function(data){
-        var res = data["status"];
-        console.log(res);
+        var res = data["state"];
+        console.log("successfully received state: " + res);
         $("#status p").text(res);
         $("#status").removeClass("is-danger is-success is-primary title-animation")
         switch (res) {
@@ -120,7 +119,7 @@ $(document).ready(function() {
         }
         return true;
       },
-      timeout: 1500 // sets timeout to 3 seconds
+      timeout: 10000 // sets timeout to 3 seconds
     });
   }
 
@@ -142,7 +141,7 @@ $(document).ready(function() {
     var success = true;
     while (true) {
         await sleep(1000);
-        success = getStatus();
+        success = await getStatus();
     }
   }
 
