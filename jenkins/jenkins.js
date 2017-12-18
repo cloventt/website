@@ -1,6 +1,6 @@
 var jenkins = {
   viewName: "Vertigo",
-  jenkinsUrl: "http://jenkins.ap-southeast-2.compute.internal:8080",
+  jenkinsUrl: "http://jenkins.adscale.co.nz",
   lastHash: 0,
   lastWidth: 0,
   lastHeight: 0,
