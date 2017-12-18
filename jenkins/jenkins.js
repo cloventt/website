@@ -1,5 +1,5 @@
 var jenkins = {
-  viewName: "Vertigo",
+  viewName: "vertigo",
   jenkinsUrl: "http://jenkins.adscale.co.nz",
   lastHash: 0,
   lastWidth: 0,
