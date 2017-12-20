@@ -66,7 +66,7 @@ var updateBuildList = function () {
     var jenkins = window.jenkins;
     var buildList = $('#buildList');
     buildList.append('<div id="noJson" class="bigFont">Could not load JSON from jenkins</div>')
-    var jobUrl = jenkins.jenkinsUrl + "/view/" + jenkins.viewName + "/api/json?tree=jobs[name,color]";
+    var jobUrl = jenkins.jenkinsUrl + "/view/" + jenkins.viewName + "/api/json";
     $.getJSON(jobUrl, function (json) {
         $("#noJson").remove();
         var responseHash = new String(JSON.stringify(json)).hashCode()
