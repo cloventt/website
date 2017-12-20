@@ -62,38 +62,50 @@ var resize = function() {
 //   });
 // }
 
+function setHeader(xhr) {
+        xhr.setRequestHeader('Jenkins-Crumb', '85f3291e0ee730c7c80b8f171a1bea04');
+      }
+
 var updateBuildList = function () {
     var jenkins = window.jenkins;
     var buildList = $('#buildList');
     buildList.append('<div id="noJson" class="bigFont">Could not load JSON from jenkins</div>')
-    var jobUrl = jenkins.jenkinsUrl + "/view/" + jenkins.viewName + "/api/json";
-    $.getJSON(jobUrl, function (json) {
-        $("#noJson").remove();
-        var responseHash = new String(JSON.stringify(json)).hashCode()
-        if (responseHash === jenkins.lastHash) {
-            console.info("Hash is the same (" + jenkins.lastHash + ") no need to redraw");
-        }
-        else {
-            console.info("New info! (" + jenkins.lastHash + " -> " + responseHash + ") redrawing.");
-            jenkins.lastHash = responseHash;
-            $(".jobNode").remove();
-            window.jsonResponse = json;
-            for (i = 0; i < json["jobs"].length; i++) {
-                var job = json["jobs"][i];
-                var jobName = job["name"];
-                var status = job["color"].replace("_", " ");
+    var jobUrl = jenkins.jenkinsUrl + "/view/" + jenkins.viewName + "/api/json?tree=jobs[name,color]";
 
-                if (jobName === "release" ) {
-                  if (status.indexOf("anime") === -1) {
-                    continue;
-                  }
-                  buildList.prepend('<div class="jobNode release ' + status + '">            RELEASING            </div>');
-                  continue;
-                }
-                buildList.append('<div class="jobNode ' + status + '">' + jobName + '</div>');
+    $.ajax({
+          url: jobUrl,
+          type: 'GET',
+          dataType: 'json',
+          success: function(json) {
+            $("#noJson").remove();
+            var responseHash = new String(JSON.stringify(json)).hashCode()
+            if (responseHash === jenkins.lastHash) {
+                console.info("Hash is the same (" + jenkins.lastHash + ") no need to redraw");
             }
-            resize();
-        }
-        setTimeout(updateBuildList, 10000);
-    });
+            else {
+                console.info("New info! (" + jenkins.lastHash + " -> " + responseHash + ") redrawing.");
+                jenkins.lastHash = responseHash;
+                $(".jobNode").remove();
+                window.jsonResponse = json;
+                for (i = 0; i < json["jobs"].length; i++) {
+                    var job = json["jobs"][i];
+                    var jobName = job["name"];
+                    var status = job["color"].replace("_", " ");
+
+                    if (jobName === "release" ) {
+                      if (status.indexOf("anime") === -1) {
+                        continue;
+                      }
+                      buildList.prepend('<div class="jobNode release ' + status + '">            RELEASING            </div>');
+                      continue;
+                    }
+                    buildList.append('<div class="jobNode ' + status + '">' + jobName + '</div>');
+                }
+                resize();
+            }
+            setTimeout(updateBuildList, 10000);
+          },
+          error: function() { alert('boo!'); },
+          beforeSend: setHeader
+        });
 };
