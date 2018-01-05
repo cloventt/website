@@ -103,7 +103,8 @@ $(document).ready(function() {
       cache: false,
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
-        console.log('error requesting status' + errorThrown);
+        var err = jQuery.parseJSON(response.responseText)
+        console.log('error requesting status' + err.Message);
         $("#status p").text('ERROR');
         $("#status").removeClass("is-danger is-success is-primary title-animation");
         $("#status").addClass("is-danger");
