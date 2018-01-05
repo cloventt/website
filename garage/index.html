@@ -83,7 +83,7 @@ $(document).ready(function() {
     $.ajax({
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
-        console.log('STATUS: '+textStatus+'\nERROR THROWN: '+errorThrown);
+        console.log('STATUS: '+textStatus+'\nERROR THROWN: ' + xhr.responseText);
         $("#status p").text('ERROR');
         $("#status").removeClass("is-danger is-success is-primary title-animation");
         $("#status").addClass("is-danger");
@@ -101,7 +101,7 @@ $(document).ready(function() {
     $.ajax({
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
-        console.log('STATUS: '+textStatus+'\nERROR THROWN: '+errorThrown);
+        console.log('STATUS: '+textStatus+'\nERROR THROWN: ' + xhr.responseText);
         $("#status p").text('ERROR');
         $("#status").removeClass("is-danger is-success is-primary title-animation");
         $("#status").addClass("is-danger");
