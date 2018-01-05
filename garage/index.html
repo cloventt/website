@@ -109,7 +109,7 @@ $(document).ready(function() {
       },
       success: function(data){
         var res = data["state"];
-        console.log("successfully received state: " + res);
+        console.log("successfully received state: " + res, data);
         $("#status p").text(res);
         $("#status").removeClass("is-danger is-success is-primary title-animation")
         switch (res) {
