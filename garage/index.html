@@ -103,8 +103,7 @@ $(document).ready(function() {
       cache: false,
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
-        console.log(xhr);
-        console.log('error requesting status ' + xhr.statusText);
+        console.log('error requesting status');
         $("#status p").text('ERROR');
         $("#status").removeClass("is-danger is-success is-primary title-animation");
         $("#status").addClass("is-danger");
