@@ -84,7 +84,9 @@ $(document).ready(function() {
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
         console.log('STATUS: '+textStatus+'\nERROR THROWN: '+errorThrown);
-        $("#status p").text('ERROR: ' + errorThrown);
+        $("#status p").text('ERROR');
+        $("#status").removeClass("is-danger is-success is-primary title-animation");
+        $("#status").addClass("is-danger");
       },
       success: function(data){
         console.log(data);
@@ -100,7 +102,9 @@ $(document).ready(function() {
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
         console.log('STATUS: '+textStatus+'\nERROR THROWN: '+errorThrown);
-        $("#status p").text('ERROR: ' + errorThrown);
+        $("#status p").text('ERROR');
+        $("#status").removeClass("is-danger is-success is-primary title-animation");
+        $("#status").addClass("is-danger");
         return false;
       },
       success: function(data){
@@ -143,6 +147,7 @@ $(document).ready(function() {
 
   async function runapp() {
     var success = true;
+    success = getStatus();
     while (true) {
         await sleep(1000);
         success = await getStatus();
