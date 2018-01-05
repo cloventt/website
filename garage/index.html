@@ -102,7 +102,7 @@ $(document).ready(function() {
     $.ajax({
       cache: false,
       url: deviceUrl,
-      error: function(xhr, textStatus, errorThrown){
+      error: function(response){
         var err = jQuery.parseJSON(response.responseText)
         console.log('error requesting status' + err.Message);
         $("#status p").text('ERROR');
