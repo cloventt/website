@@ -81,7 +81,6 @@ $(document).ready(function() {
   var toggleDoor = function() {
     let deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/trigger";
     $.ajax({
-      cache: false,
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
         console.log('error triggering door');
@@ -100,7 +99,6 @@ $(document).ready(function() {
   var getStatus = function() {
     let deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/status";
     $.ajax({
-      cache: false,
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
         console.log('error requesting status');
