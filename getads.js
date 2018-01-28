@@ -472,6 +472,7 @@ if (!adscaleNS) {
             var top_friendly = adscaleNS.getHighestFrame();
             if (top_friendly === window.top) {
                 adscalePageUrl = window.top.location.href;
+                adscaleNS.debug("detected page URL via friendly iframe chain: " + adscalePageUrl);
             }
             else {
                 adscalePageUrl = top_friendly.document.referrer;
@@ -481,6 +482,10 @@ if (!adscaleNS) {
                         adscalePageUrl = origins[origins.length - 1];
                     }
                 }
+            }
+            adscaleNS.debug("detected page URL: " + adscalePageUrl);
+            if (typeof(adscalePageUrl) === 'undefined') {
+                adscaleNS.debug("page URL is undefined, returning window.location.href: " + window.location.href);
             }
             return typeof(adscalePageUrl) === 'undefined' ? window.location.href : adscalePageUrl;
         },
