@@ -1,6 +1,7 @@
 {
     "attachments": [
         {
+	    "response_type": "in_channel",
             "fallback": "Okely dokely co-workerino!",
             "color": "#d54642",
             "image_url": "http://cloventt.net/flanders.jpg",
