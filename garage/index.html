@@ -79,7 +79,7 @@ $(document).ready(function() {
   $("#device-address input").val(localStorage.getItem('deviceAddress'));
 
   var toggleDoor = function() {
-    let deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/trigger";
+    var deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/trigger";
     $.ajax({
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
@@ -97,7 +97,7 @@ $(document).ready(function() {
   }
 
   var getStatus = function() {
-    let deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/status";
+    var deviceUrl = "http://" + localStorage.getItem('deviceAddress') + "/status";
     $.ajax({
       url: deviceUrl,
       error: function(xhr, textStatus, errorThrown){
