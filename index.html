@@ -13,23 +13,30 @@
 <div id="background"></div>
 <div id="blocker"></div>
 <div class="card">
-	<div class="name">David Palmer</div>
+	<h1 class="name">David Palmer</h1>
 	<div class="subtitle">Programmer/Developer</div>
-	<div class=="location">Christchurch, New Zealand</div>
+	<div class="location">Christchurch, New Zealand</div>
 	<div class="skills"></div>
 	<div class="contacts">
 		<table>
 		<tbody>
 		<tr>
-		<td class="contactlabel">email:</td>
+		<td class="contactlabel">
+			<script type="text/javascript">
+				document.write('email:');
+			</script>
+		</td>
 		<td><script type="text/javascript">
 		document.write('<a href="mai' + 'lto:dav' + 'e@clovent' + 't.net">da' + 've@clov' + 'entt.net</a>');
 		</script></td>
 		</tr>
+		<tr>
+			<td style="text-align:center;font-size:small;" colspan=2><a href="secure.html">Contact me securely &rarr;</a></td>
+		</tr>
 		</tbody>
 		</table>
 	</div>
-	<div class="headshot"><a href="davidpalmer.vcf"><img class="round" src="me.jpg" alt="headshot"/></a></div>
+	<div class="headshot"><a href="davidpalmer.vcf"><img class="round" src="me.jpg" alt="Contact Card"/></a></div>
 </div>
 <script type="text/javascript">
 function initMap() {
