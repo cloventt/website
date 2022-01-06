@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+    
+
+    <meta name="author" content="David Palmer">
+    <meta name="description" content="A very vrief overview of a project I completed to build an HF receiving antenna.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dipole Antenna for Shortwave Listening"/>
+<meta name="twitter:description" content="A very vrief overview of a project I completed to build an HF receiving antenna."/>
+
+    <meta property="og:title" content="Dipole Antenna for Shortwave Listening" />
+<meta property="og:description" content="A very vrief overview of a project I completed to build an HF receiving antenna." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cloventt.net/posts/2022-01-06-dipole-antenna/" />
+<meta property="article:published_time" content="2022-01-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-01-06T00:00:00+00:00" />
+
+
+    <title>
+  Dipole Antenna for Shortwave Listening · cloventt
+</title>
+
+    
+      <link rel="canonical" href="https://cloventt.net/posts/2022-01-06-dipole-antenna/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="sha256-2f3b/&#43;byfmmYXcX&#43;BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark">
+    
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      cloventt
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Rambles</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About/Contact</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://cloventt.net/posts/2022-01-06-dipole-antenna/">
+              Dipole Antenna for Shortwave Listening
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2022-01-06T00:00:00Z'>
+                January 6, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              8-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/radio/">radio</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/shortwave/">shortwave</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/antenna/">antenna</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>I&rsquo;m pretty notorious for jumping around between hobbies. I&rsquo;ll normally stick to one for a few months and then drop it, only to circle back around to it a few years later. One hobby I&rsquo;ve always been fascinated with but never actually got stuck into is amateur radio. At the moment I&rsquo;m gearing up towards getting my General Amateur Operator’s Certificate of Competency so I can get on the air (I&rsquo;ve had some pretty amazing help from the Christchurch branch of the NZART and I&rsquo;m hoping to achieve that goal in the next few weeks).</p>
+<p>In the meantime, I&rsquo;ve been absorbing everything I can about how radio works. The beauty of radio is that you can learn an awful lot about it without needing a license, as long as you&rsquo;re happy just to receive. Last time I considered having a stab at this hobby I picked up a HanRongDa HRD-737 wide-band receiver, and I&rsquo;ve had a lot of fun with it just tuning around the bands. I think it cost me about NZD$50 from <a href="https://www.aliexpress.com/wholesale?SearchText=HanRongDa+HRD-737">AliExpress</a>. You get what you pay for though; while it&rsquo;s fine for picking up broadcast music radio - as well as air-band and even VHF - it was absolutely hopeless at picking up shortwave signals. I&rsquo;ll include a video review from todderbert below in case you&rsquo;re interested in buying one (I recommend it if you just want to see what&rsquo;s out there but not for anything more serious).</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2DSfCNgzJ28" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="todderbert Review of the HanRongDa HRD-737 Wideband Receiver"></iframe>
+</div>
+
+<p>I live in New Zealand, and sadly that means we&rsquo;re a long way from anyone that broadcasts on shortwave. If I got the antenna in <em>just</em> the right place and squinted <em>just</em> right the HRD-737 could sometimes pick up broadcasts from China, but they were never anything but a wash of noise and nowhere near intelligible. If I used the clip-on wire antenna that came with the receiver I could sometimes pick up a wee bit more, but nothing was particularly clear. So it seemed obvious I needed a larger antenna.</p>
+<p>Generally the advice seems to be <em>&ldquo;just use whatever random length of wire you can get&rdquo;</em>. For me this was a bit of a challenge. My house is on the smaller side, and my property isn&rsquo;t huge either. Me entire property is only about 20m on it&rsquo;s longest side, and the house itself is a little over 12m on it&rsquo;s longest side. Add to that my wife&rsquo;s reluctance to let me hang visible wires all over the property or put up a pole and suddenly my options were getting pretty limited. But where there&rsquo;s a will there&rsquo;s a way, and where there&rsquo;s 12m of clear space up in my roof space there&rsquo;s a way to have an antenna.</p>
+<p>After a bit of reading online I settled on a dipole antenna, mostly because it seemed like a fun project. A 12m run of wire will probably work well too but I learned much more about antennas by designing a dipole than I did from just putting up a long wire. A 12m antenna puts me somewhere in the middle of the popular SW bands, especially the ones that are most-used at night. As I only really get time to do my hobbies in the late evening, this seemed like a good choice.</p>
+<p>Given that the antenna was going in the attic, I was able to get away with just using 18AWG speaker cable that I sourced from <a href="https://www.jaycar.co.nz/heavy-duty-speaker-cable-30m-roll/p/WB1709">Jaycar</a>. This probably wouldn&rsquo;t survive long outdoors but in the relatively static enviroment of my roof-space I think it will last a long time. To feed the antenna I decided to use 50Ω coax so that I could have an unbalanced but shielded feed-line. My thinking was that the shielded feed-line would help reduce RF interference from all the gadgets in the house, especially given that the antenna was going to be indoors. But this then presented a new challenge: how to connect unbalanced coax to a balanced dipole antenna?</p>
+<p>The answer is of course a balun. Generally, the impedance of a dipole at the feed point is somewhere between 50Ω and 75Ω (depending on how high it is off the ground). My antenna is only going to be less than 5m off the ground, so it&rsquo;s probably closer that the 75Ω range. The signal loss from a 75Ω RX antenna to 50Ω coax is not something I&rsquo;m going to be losing sleep over, and I&rsquo;m happy that it&rsquo;s &ldquo;good enough&rdquo; that I don&rsquo;t need to change the impedance. That means all I really need is a 1:1 balun to connect the antenna to the coax, and I should be sweet.</p>
+<p>Luckily for me, a 1:1 balun is pretty easy to make. There&rsquo;s an absolutely fantastic guide by VK6YSF that you can look at <a href="https://vk6ysf.com/balun_guanella_current_1-1.htm">here</a>. Basically the balun consists of paired wires wrapped around a toroid. Better yet, VK6YSF is in Australia, so I was able to directly buy all the exact parts listed in the guide directly from Jaycar. While my son was down for a nap on Christmas Day, I slipped out to the shed and managed to get everything assembled. I initially built one using green electrical tape as insulation, but as the guide called for using teflon thread-seal tape I decided to make another one that way. The one using teflon is what ultimately ended up in the roof.</p>
+<div class="notice tip">
+  <div class="notice-title">
+    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>Tip
+  </div>
+  <div class="notice-content">I think the teflon only really matters if the balun is used for transmitting, as teflon is good at resisting high temperatures. These things can probably get a bit warm once a few watts are pumping through them. For receiving though it probably doesn&rsquo;t matter, but I figured I may as well use the one capable of transmitting.</div>
+</div>
+
+<figure>
+    <img src="/images/IMG_5873.jpg"
+         alt="builing-the-baluns"/> <figcaption>
+            <p>Constructing baluns on Christmas Day. Notice the SO-239 connector at the bottom for interfacing with the coax. One of the wires is attached to the centre pin and the other is bonded to the SO-239&rsquo;s outer housing.</p>
+        </figcaption>
+</figure>
+
+<p>I waited for a cool day and dragged myself up a ladder into the roof. As I mentioned, my house is not that big, so the roof space can be a little cramped. Once I&rsquo;d figured out how to get around up there, it only took me about half an hour to put the antenna up. I&rsquo;d bought some nail-in cable clips (<a href="https://www.jaycar.co.nz/cable-clips-7-10mm-expandable-pk-25/p/HP0694">these ones</a>) but they ended up being totally useless - the weight of the cable just pulled them straight out of our rimu top chords. Instead I used zip ties, wrapped around the frames. This ended up being better for another reason: I was able to separate the cable slightly from the frame of the house.</p>
+<figure>
+    <img src="/images/IMG_5913.jpg"
+         alt="antenna-in0-the-roof"/> <figcaption>
+            <p>Why is it that dark, confined spaces always look scary when using flash photography?</p>
+        </figcaption>
+</figure>
+
+<p>Finally, I connected my length of coax to the balun and ran that down to the spare room. To connect it to the radio, I initially just used a wire with alligator clips at each end, attached to the antenna of the HRD-737. Suddenly the sensitivity seemed to jump right up. Success! I could hear a much wider range of stations across all bands, especially just after sunset. However, most of the stations were still very noisy with a lot of fading. Luckily I&rsquo;d anticipated this and made another purchase in the meantime.</p>
+<p>Enter the Tecsun PL-310ET shortwave radio. At under NZD$100, including shipping from Australia, it seemed like a worthy upgrade to the HRD-737. Importantly, it has a dedicated antenna plug, meaning it can be connected directly to the antenna without the need for alligator clips. I soldered together a harness from a female banana socket to the tip of a 3.5mm mono audio cable, and this was good enough to get the connection through to the radio. The PL-310ET is a much more capable radio, with a huge list of features compared to the HRD-737. As always toddebert has a great review of it where he covers the important things.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/sMZZG87iQL4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="todderbert Review of the Tecsun PL-310ET shortwave radio"></iframe>
+</div>
+
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">I soon realised I&rsquo;d made a mistake with my harness. The signal improved a massive amount when I connected the ring of the 3.5mm TRS connector to the sleeve of the PL-259 on the coax. As soon as that connection was made, I was suddenly able to clearly hear stations from all over Asia and America.</div>
+</div>
+
+<p>So far I&rsquo;ve mostly picked up Chinese SW broadcasts in a variety of languages, but I&rsquo;ve also received a few stations from other interesting places:</p>
+<ul>
+<li>Taiwan</li>
+<li>North Korea</li>
+<li>Japan</li>
+<li>Hawaii</li>
+<li>Guam</li>
+<li>North America (barely)</li>
+</ul>
+<p>And of course, I&rsquo;ve even managed to collect the venerable Radio New Zealand. This is one of the more interesting contacts: in theory I am inside the skip zone for the RNZ shortwave broadcast. But, I was able to pick it up very clearly for about 15 minutes during sunset.</p>
+<p>The antenna is also really effective for standard broadcast AM and FM. I can pick up any station in Christchurch with no difficulty, and have even picked up FM stations from as far afield as Cheviot - a distance of 130km!</p>
+<p>A crucial resource in all of this is <a href="https://short-wave.info">short-wave.info</a> which is a fantastic resource for determining what&rsquo;s on the air when you&rsquo;re listening. So far I&rsquo;ve only really had time to listen during my evening, so next I&rsquo;ll be tuning around sometime during the day if I ever get time. I currently have an RTL-SDR in the mail, so I&rsquo;m planning to hook that up to the antenna and make it accessible with OpenWebRX so that I can do SWL from my phone - even on my lunch break at the office.</p>
+<p>73</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+     David Palmer 
+    ·
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js" integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

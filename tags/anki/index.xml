@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>anki on cloventt</title>
+    <link>https://cloventt.net/tags/anki/</link>
+    <description>Recent content in anki on cloventt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cloventt.net/tags/anki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>External Link: NZ Amateur Radio License Anki Deck</title>
+      <link>https://cloventt.net/posts/nz-anki-hamcram/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/posts/nz-anki-hamcram/</guid>
+      <description>This is an Anki deck I made for memorising everything you need to know to pass the NZ Amateur Radio license test. The questions/answers were all pulled from the public-domain list that is maintained on the NZART page.
+You can download the deck from the AnkiWeb page.</description>
+    </item>
+    
+  </channel>
+</rss>
