@@ -38,5 +38,15 @@ Some things I know a bit about in no particular order:
  Linux Java Python Kotlin Scala Apache Druid Apache Kafka Hadoop Apache Spark Docker Amazon Web Services SQL Typescript Angular CSS Bash Avro Scrum Kanban Avro  Feel free to get in touch with me at dave@cloventt.</description>
     </item>
     
+    <item>
+      <title>Pictures from Space: ISS Amateur SSTV</title>
+      <link>https://cloventt.net/posts/2021-12-31-iss-sstv/</link>
+      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/posts/2021-12-31-iss-sstv/</guid>
+      <description>I&amp;rsquo;ve been recently getting into amateur radio, and one of my goals was to do some amateur radio stuff involving satellites. Luckily the International Space Station frequently runs amateur radio events where they broadcast SSTV images.
+What is SSTV?    Slow-scan television is a protocol for sending images over radio. The &amp;ldquo;slow&amp;rdquo; part comes because the data rate is quite low - you might only get one full frame in a minute or two.</description>
+    </item>
+    
   </channel>
 </rss>
