@@ -116,10 +116,16 @@
       </h1>
     </header>
 
-    <figure>
-    <img src="/images/me.jpg"
-         alt="my-mugshot" width="250px" height="250px"/> 
-</figure>
+    
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" style="max-width:250px">
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/me.jpg" alt="my-mugshot"/>
+    </div>
+    <a href="/images/me.jpg" itemprop="contentUrl"></a>
+  </figure>
+</div>
 
 <p>I&rsquo;m a Software Engineer based in Christchurch, New Zealand.</p>
 <p>While I have a lot of experience with both backend and frontend engineering, my expertise these days is mostly focused around data engineering. I work with big data on a daily basis in my current role.</p>
