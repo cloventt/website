@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on cloventt</title>
+    <link>https://cloventt.net/tags/</link>
+    <description>Recent content in Tags on cloventt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cloventt.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>antenna</title>
+      <link>https://cloventt.net/tags/antenna/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/tags/antenna/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>radio</title>
+      <link>https://cloventt.net/tags/radio/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/tags/radio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortwave</title>
+      <link>https://cloventt.net/tags/shortwave/</link>
+      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/tags/shortwave/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>anki</title>
+      <link>https://cloventt.net/tags/anki/</link>
+      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/tags/anki/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
