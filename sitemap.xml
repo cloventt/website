@@ -3,12 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://cloventt.net/tags/antenna/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
+    <loc>https://cloventt.net/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://cloventt.net/</loc>
+    <loc>https://cloventt.net/tags/dmr/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/openwebrx/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/posts/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/radio/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/rtl-sdr/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/sdr/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/antenna/</loc>
     <lastmod>2022-01-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://cloventt.net/posts/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cloventt.net/tags/radio/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://cloventt.net/tags/shortwave/</loc>
-    <lastmod>2022-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://cloventt.net/tags/</loc>
     <lastmod>2022-01-06T00:00:00+00:00</lastmod>
   </url>
   

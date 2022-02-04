@@ -6,7 +6,16 @@
     <description>Recent content in Posts on cloventt</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cloventt.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cloventt.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Running OpenWebRx with DMR in Docker behind an Nginx reverse proxy</title>
+      <link>https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/</guid>
+      <description>I finally received my RTL-SDR in the mail at the start of the year, and I&amp;rsquo;ve been tinkering with it off-and-on whenever I get some time to myself on my computer. One of the issues I&amp;rsquo;ve run into is that there doesn&amp;rsquo;t seem to be an absolute &amp;ldquo;killer app&amp;rdquo; for SDR on Linux, with all of the top options on the RTL-SDR blog being Windows-only. So the hunt was on for something I could use.</description>
+    </item>
+    
     <item>
       <title>Dipole Antenna for Shortwave Listening</title>
       <link>https://cloventt.net/posts/2022-01-06-dipole-antenna/</link>

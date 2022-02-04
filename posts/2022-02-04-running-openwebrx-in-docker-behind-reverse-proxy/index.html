@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://utteranc.es; img-src 'self' cloventt.goatcounter.com goatcounter.com; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ cloventt.goatcounter.com; script-src 'self' 'unsafe-inline' cloventt.goatcounter.com goatcounter.com gc.zgo.at https://utteranc.es; prefetch-src 'self'; connect-src 'self' cloventt.goatcounter.com goatcounter.com gc.zgo.at;">
+
+    
+
+    <meta name="author" content="David Palmer">
+    <meta name="description" content="How I got OpenWebRx running on my home server.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Running OpenWebRx with DMR in Docker behind an Nginx reverse proxy"/>
+<meta name="twitter:description" content="How I got OpenWebRx running on my home server."/>
+
+    <meta property="og:title" content="Running OpenWebRx with DMR in Docker behind an Nginx reverse proxy" />
+<meta property="og:description" content="How I got OpenWebRx running on my home server." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/" />
+<meta property="article:published_time" content="2022-02-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-04T00:00:00+00:00" />
+
+
+    <title>
+  Running OpenWebRx with DMR in Docker behind an Nginx reverse proxy · cloventt
+</title>
+
+    
+      <link rel="canonical" href="https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css" integrity="sha256-2f3b/&#43;byfmmYXcX&#43;BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.002ee2378e14c7a68f1f0a53d9694ed252090987c4e768023fac694a4fc5f793.css" integrity="sha256-AC7iN44Ux6aPHwpT2WlO0lIJCYfE52gCP6xpSk/F95M=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      
+        
+        <link rel="stylesheet" href="/custom.min.44f7946f6ce2fa3c768ba23a83c9d0d2833acc66e73246fc3470403ebf5053fc.css" integrity="sha256-RPeUb2zi&#43;jx2i6I6g8nQ0oM6zGbnMkb8NHBAPr9QU/w=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-dark">
+    
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      cloventt
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Rambles</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About/Contact</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/">
+              Running OpenWebRx with DMR in Docker behind an Nginx reverse proxy
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2022-02-04T00:00:00Z'>
+                February 4, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              7-minute read
+            </span>
+          </div>
+          
+          
+          <div class="tags">
+  <i class="fa fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/radio/">radio</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/sdr/">sdr</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/rtl-sdr/">rtl-sdr</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/openwebrx/">openwebrx</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/dmr/">dmr</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>I finally received my <a href="https://www.rtl-sdr.com/about-rtl-sdr/">RTL-SDR</a> in the mail at the start of the year, and I&rsquo;ve been tinkering with it off-and-on whenever I get some time to myself on my computer. One of the issues I&rsquo;ve run into is that there doesn&rsquo;t seem to be an absolute &ldquo;killer app&rdquo; for SDR on Linux, with all of the top options on the <a href="https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/">RTL-SDR blog</a> being Windows-only. So the hunt was on for something I could use.</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/2022-02-04-openwebrx/openwebrx-dmr.png" alt="openwebrx DMR"/>
+    </div>
+    <a href="/images/2022-02-04-openwebrx/openwebrx-dmr.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Listening to DMR channels using OpenWebRx.</p>
+      </figcaption>
+  </figure>
+</div>
+
+<h2 id="the-rest">
+  The Rest
+  <a class="heading-link" href="#the-rest">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>I&rsquo;ve tried out <a href="https://github.com/AlexandreRouma/SDRPlusPlus">SDR++</a> but ran into a decent variety of issues. First was that there aren&rsquo;t pre-built binaries for Fedora, which is my current daily driver distro. No worries, I can compile it from source, but already that makes the technical skill required to install it well out of reach of most home users. Once I had it compiled and running I ran into a weird issue<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> where the audio sink would throw a hissy fit and have a meltdown, I suspect because Fedora uses Pipewire. Even when it did work, there is still no support for Hi-DPI displays in SDR++<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> so the UX was crunched down into ant-sized fonts on my machine. So I gave up on that as an option, despite it being top of the list on the RTL-SDR blog for Linux.</p>
+<p>Next I tried <a href="https://gqrx.dk/">GQRX</a>. While it worked <em>much</em> better than SDR++ in almost every way, I still found the UI pretty clunky to use. If you do pick GQRX for your RTL-SDR, make sure you check the <code>Hardware ACG</code> option in the receiver config; without this enabled it was incredibly fiddly to get any good signals out of the noise.</p>
+<h2 id="the-best">
+  The Best
+  <a class="heading-link" href="#the-best">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>So, finally, I decided to try <a href="https://www.openwebrx.de/">OpenWebRx</a>. Not only is it an incredibly robustly-featured SDR, it also uses a web UI that works even on a smartphone. The ability to tune around the bands from the other end of my house - or even when I&rsquo;m not at home - makes it head-and-shoulders better than the others I tried. The project seems to be incredibly well looked after by current maintiner Jakob Ketterl, and it was a breath of fresh air to find a detailed wiki explaining how to install the programme in a variety of ways. And I have to say as software engineer that shipping a pre-built Docker image for your project is such a no-brainer these days.</p>
+<h2 id="installation">
+  Installation
+  <a class="heading-link" href="#installation">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>The first step is to get OpenWebRx running somehow. I use Docker for everything on my home server, so I already have <code>docker-compose</code> installed and orchestrating all the services I run in my house. The Github wiki for the project has a <a href="https://github.com/jketterl/openwebrx/wiki/Getting-Started-using-Docker">fantastic guide</a> on getting up-and-running in Docker, so it was a piece of cake to adapt that into my existing docker-compose config.</p>
+<p>Here is the docker-compose entry I used to get OpenWebRx running:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="font-weight:bold">version</span>: <span style="font-style:italic">&#34;2&#34;</span>
+<span style="font-weight:bold">services</span>:
+  <span style="font-weight:bold">openwebrx</span>:
+    <span style="font-weight:bold">container_name</span>: openwebrx
+    <span style="font-style:italic"># use the full-fat image to get all the features</span>
+    <span style="font-weight:bold">image</span>: jketterl/openwebrx-full:stable
+    <span style="font-weight:bold">ports</span>:
+        <span style="font-style:italic"># expose the web-UI port</span>
+      - <span style="font-style:italic">&#34;8073:8073&#34;</span>                            
+    <span style="font-weight:bold">volumes</span>:
+        <span style="font-style:italic"># mount in the config dir for stability between restarts</span>
+      - .config/openwebrx:/var/lib/openwebrx
+    <span style="font-weight:bold">devices</span>:
+        <span style="font-style:italic"># mount in the USB bus so that OpenWebRx can find the dongle</span>
+      - /dev/bus/usb:/dev/bus/usb
+    <span style="font-weight:bold">tmpfs</span>:
+        <span style="font-style:italic"># recommended if you&#39;re using an SSD</span>
+      - /tmp/openwebrx
+</code></pre></div><p>Then simply running <code>docker-compose up -d</code> starts the service.</p>
+<div class="notice tip">
+  <div class="notice-title">
+    <i class="fa fa-lightbulb-o" aria-hidden="true"></i>Tip
+  </div>
+  <div class="notice-content">You may need to blacklist the <code>dvb_usb_rtl28xxu</code> kernel module on your host machine for this to work. If you don&rsquo;t blacklist that module, the host machine will detect the RTL-SDR dongle and &ldquo;claim&rdquo; it before the OpenWebRx container gets a chance to use it. In my case I was able to use <code>modprobe -r dvb_usb_rtl28xxu</code> to unload the module, and then I additionally blacklisted it following the <a href="https://wiki.archlinux.org/title/Kernel_module#Blacklisting">guide on the Arch wiki page</a>.</div>
+</div>
+
+<h2 id="getting-dmr-working">
+  Getting DMR Working
+  <a class="heading-link" href="#getting-dmr-working">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>OpenWebRx used-to support DMR, but it was using the legally-questionable <code>mbelib</code> to do so. As a result the maintainer removed it at the request of his employers<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. However, he also took the chance to refactor some of the signal processing backend into a separate service called <code>codecserver</code>. From what I can understand, <code>codecserver</code> acts as a decoder service, turning your digital radio signals into audio. Without <code>mbelib</code> inside <code>codecserver</code>, OpenWebRx cannot decode DMR and some other digital voice modes. The only (completely legal) fix is to buy a fairly expensive USB dongle that acts as a &ldquo;black-box&rdquo; decoder for these. I&rsquo;m pretty reluctant to drop so much money on a tiny USB stick, or support proprietary codecs in general, so I looked for ways to get <code>codecserver</code> working with <code>mbelib</code> again.</p>
+<p>Luckily for me, someone else has already done the leg work for me. If you&rsquo;re willing to adopt the legal risks involved in doing so, there is a <a href="https://github.com/fventuri/codecserver-mbelib-module">Github repo</a> available containing code that can be used to compile a <code>codecserver</code> module containing <code>mbelib</code>, so that digital voice can once-again be decoded by OpenWebRx. After a bit of finagling I was able to compile this and get it running. Given that I&rsquo;m running OpenWebRx inside Docker it made sense to do the same for my <code>codecserver</code> instance. If you&rsquo;re interested in doing the same I&rsquo;ve posted my <a href="https://github.com/cloventt/codecserver-mbelib-docker">Dockerfile</a> up onto Github. This Dockerfile will build an image containing <code>codecserver</code> with the <code>mbelib</code> module installed and working. Then all you need to do is change your OpenWebRx to connect to the separate <code>codecserver</code> and DMR should magically start working next time you restart OpenWebRx.</p>
+<h2 id="reverse-proxy">
+  Reverse Proxy
+  <a class="heading-link" href="#reverse-proxy">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Once I had OpenWebRx running, I wanted to allow it through my Nginx reverse proxy. Luckily this was also the easiest thing in the world. Al that is required is to add something similar to this to your Nginx config:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">location /openwebrx/ {
+    proxy_pass    http://localhost:8073/;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection &#34;Upgrade&#34;;
+    proxy_set_header Host $host;
+}
+</code></pre></div><p>The additional config there are to ensure that websockets continue working, which is a protocol that OpenWebRx relies upon. I&rsquo;ve verified that this works well on desktop browsers and on my iPhone.</p>
+<h2 id="things-to-do">
+  Things to Do
+  <a class="heading-link" href="#things-to-do">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>I&rsquo;ve already been busy tuning into my local amateur repeaters, both on simplex and digital modes. I&rsquo;ve also spent some time clicking around the bands and getting a feel for what&rsquo;s out there between the static. As an example, I&rsquo;ve found APRS beacons sending out GPS positions (mostly for private cars, but also the odd bus). I was amazed to find I could pick up these signals from as far as Timaru with no issues. I also stumbled onto the emergency services DMR channels, which are all heavily encrypted and unreadable these days. Of course there&rsquo;s air band, with all the regular comings-and-goings from my local airport, and really the list just goes on and on.</p>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/2022-02-04-openwebrx/openwebrx.png" alt="openwebrx UI"/>
+    </div>
+    <a href="/images/2022-02-04-openwebrx/openwebrx.png" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Decoding APRS location beacon packets using OpenWebRx.</p>
+      </figcaption>
+  </figure>
+</div>
+
+<h2 id="whats-next">
+  What&rsquo;s next?
+  <a class="heading-link" href="#whats-next">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Once I&rsquo;ve collected a reasonable list of confirmed and reliable bookmarks, I&rsquo;ll collate them and publish them either here or on Github for other local OpenWebRx users to import. Most interesting to me is some of the private un-encrypted DMR channels, mostly used by worksites and logistics companies. The easy part is seeing them on the waterfall - the harder part is figuring out who they are.</p>
+<p>I&rsquo;ll share my SDR profiles somewhere as well, once I&rsquo;ve finished tidying them up. The RTL-SDR has a fairly narrow bandwidth, forcing you to select between a lot of bands more frequently than other higher-end SDRs. While this is a major drawback, it is really offset by the super low cost of the device.</p>
+<p>Now that I can hear some amateur SSB beacons, I&rsquo;m planning to begin practicing my morse code. I&rsquo;ve already started - but been side-tracked by work and studying for my amateur radio certificate. Besides that, I&rsquo;m also curious to learn how to recognise different types of transmissions just by looking at their visual profile on the waterfall.</p>
+<hr>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>I opened a <a href="https://github.com/AlexandreRouma/SDRPlusPlus/issues/618">bug report</a> for the issue but the maintainer immediately closed it, referring me to a different project as the cause. Such is life in open source software.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>You can check here whether this issue has been resolved at time of reading: <a href="https://github.com/AlexandreRouma/SDRPlusPlus/issues/53">https://github.com/AlexandreRouma/SDRPlusPlus/issues/53</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>He explains the decision in a <a href="https://groups.io/g/openwebrx/message/3487">post</a> on his mailing list. It&rsquo;s cool that his employer lets him work on OSS full-time, but it does suck that it came at this high cost. Radio should be accessible to all; these proprietary codecs are a blight on the airwaves.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        <script src="https://utteranc.es/client.js"
+    repo= "cloventt/website"
+    issue-term="pathname"
+    
+    theme="github-dark"
+    crossorigin="anonymous"
+    async>
+  </script>
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    ©
+    
+    2022
+     David Palmer 
+    ·
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.39a51230dce2ac866c049b52573e38bf60666af4bc63c1bdf203b9b2d95b1cd6.js" integrity="sha256-OaUSMNzirIZsBJtSVz44v2BmavS8Y8G98gO5stlbHNY="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <script data-goatcounter="https://cloventt.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+    
+
+    
+
+    
+  </body>
+
+</html>
