@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://cloventt.net/tags/baofeng/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://cloventt.net/</loc>
     <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cloventt.net/tags/dmr/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/hardware/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/posts/2022-05-20-ham-radio-update/</loc>
     <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -24,6 +39,11 @@
   
   <url>
     <loc>https://cloventt.net/tags/radio/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cloventt.net/tags/review/</loc>
     <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
