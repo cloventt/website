@@ -5,46 +5,7 @@
     <link>https://cloventt.net/</link>
     <description>Recent content on cloventt</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://cloventt.net/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>I got my license! &#43; Baofeng UV82 reviewed</title>
-      <link>https://cloventt.net/posts/2022-05-20-ham-radio-update/</link>
-      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cloventt.net/posts/2022-05-20-ham-radio-update/</guid>
-      <description>So, the big news is I got my General Amateur Operator&amp;rsquo;s Certificate of Competency!
-I attended the May 2022 HamCram event at the Chirstchurch branch of NZART, hosted by Mike Duncan ZL3MWD at the Christchurch clubrooms. The two-day session was going to happen earlier, but as with all things COVID-19 got in the way of it. I was already pretty well prepared for the exam, but it was a lot of fun to hang out and go over the material in a more directed way.</description>
-    </item>
-    
-    <item>
-      <title>Running OpenWebRx with DMR in Docker behind an Nginx reverse proxy</title>
-      <link>https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/</link>
-      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cloventt.net/posts/2022-02-04-running-openwebrx-in-docker-behind-reverse-proxy/</guid>
-      <description>I finally received my RTL-SDR in the mail at the start of the year, and I&amp;rsquo;ve been tinkering with it off-and-on whenever I get some time to myself on my computer. One of the issues I&amp;rsquo;ve run into is that there doesn&amp;rsquo;t seem to be an absolute &amp;ldquo;killer app&amp;rdquo; for SDR on Linux, with all of the top options on the RTL-SDR blog being Windows-only. So the hunt was on for something I could use.</description>
-    </item>
-    
-    <item>
-      <title>Dipole Antenna for Shortwave Listening</title>
-      <link>https://cloventt.net/posts/2022-01-06-dipole-antenna/</link>
-      <pubDate>Thu, 06 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cloventt.net/posts/2022-01-06-dipole-antenna/</guid>
-      <description>I&amp;rsquo;m pretty notorious for jumping around between hobbies. I&amp;rsquo;ll normally stick to one for a few months and then drop it, only to circle back around to it a few years later. One hobby I&amp;rsquo;ve always been fascinated with but never actually got stuck into is amateur radio. At the moment I&amp;rsquo;m gearing up towards getting my General Amateur Operator’s Certificate of Competency so I can get on the air (I&amp;rsquo;ve had some pretty amazing help from the Christchurch branch of the NZART and I&amp;rsquo;m hoping to achieve that goal in the next few weeks).</description>
-    </item>
-    
-    <item>
-      <title>External Link: NZ Amateur Radio License Anki Deck</title>
-      <link>https://cloventt.net/posts/nz-anki-hamcram/</link>
-      <pubDate>Wed, 05 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://cloventt.net/posts/nz-anki-hamcram/</guid>
-      <description>This is an Anki deck I made for memorising everything you need to know to pass the NZ Amateur Radio license test. The questions/answers were all pulled from the public-domain list that is maintained on the NZART page.
-You can download the deck from the AnkiWeb page.</description>
-    </item>
-    
+    <language>en</language><atom:link href="https://cloventt.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
       <link>https://cloventt.net/about/</link>
@@ -55,16 +16,6 @@ You can download the deck from the AnkiWeb page.</description>
 While I have a lot of experience with both backend and frontend engineering, my expertise these days is mostly focused around data engineering. I work with big data on a daily basis in my current role.
 Some things I know a bit about in no particular order:
  Linux Java Python Kotlin Scala Apache Druid Apache Kafka Hadoop Apache Spark Docker Amazon Web Services SQL Typescript Angular CSS Bash Avro Scrum Kanban Avro  Feel free to get in touch with me at dave@cloventt.</description>
-    </item>
-    
-    <item>
-      <title>Pictures from Space: ISS Amateur SSTV</title>
-      <link>https://cloventt.net/posts/2021-12-31-iss-sstv/</link>
-      <pubDate>Fri, 31 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://cloventt.net/posts/2021-12-31-iss-sstv/</guid>
-      <description>I&amp;rsquo;ve been recently getting into amateur radio, and one of my goals was to do some amateur radio stuff involving satellites. Luckily the International Space Station frequently runs amateur radio events where they broadcast SSTV images.
-What is SSTV?    Slow-scan television is a protocol for sending images over radio. The &amp;ldquo;slow&amp;rdquo; part comes because the data rate is quite low - you might only get one full frame in a minute or two.</description>
     </item>
     
   </channel>
