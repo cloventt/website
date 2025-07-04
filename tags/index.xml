@@ -4,7 +4,8 @@
     <title>Tags on cloventt</title>
     <link>https://cloventt.net/tags/</link>
     <description>Recent content in Tags on cloventt</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://cloventt.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://cloventt.net/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

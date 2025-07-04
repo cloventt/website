@@ -4,19 +4,16 @@
     <title>cloventt</title>
     <link>https://cloventt.net/</link>
     <description>Recent content on cloventt</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://cloventt.net/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cloventt.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
       <link>https://cloventt.net/about/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://cloventt.net/about/</guid>
-      <description>I&amp;rsquo;m a Software Engineer based in Christchurch, New Zealand.
-While I have a lot of experience with both backend and frontend engineering, my expertise these days is mostly focused around data engineering. I work with big data on a daily basis in my current role.
-Some things I know a bit about in no particular order:
-Linux Java Python Kotlin Scala Apache Druid Apache Kafka Hadoop Apache Spark Docker Amazon Web Services SQL Typescript Angular CSS Bash Avro Scrum Kanban Avro Feel free to get in touch with me at dave@cloventt.</description>
+      <description>&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cloventt.net/css/hugo-easy-gallery.css&#34; /&gt;&#xA;&lt;div class=&#34;box&#34; style=&#34;max-width:250px&#34;&gt;&#xA;  &lt;figure  itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;&#xA;    &lt;div class=&#34;img&#34;&gt;&#xA;      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://cloventt.net/images/me.jpg&#34; alt=&#34;my-mugshot&#34;/&gt;&#xA;    &lt;/div&gt;&#xA;    &lt;a href=&#34;https://cloventt.net/images/me.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;&#xA;  &lt;/figure&gt;&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;I&amp;rsquo;m a Software Engineer based in Christchurch, New Zealand.&lt;/p&gt;&#xA;&lt;p&gt;While I have a lot of experience with both backend and frontend engineering, my expertise these days is mostly focused around data engineering. I work with big data on a daily basis in my current role.&lt;/p&gt;&#xA;&lt;p&gt;Some things I know a bit about in no particular order:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Linux&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Java&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Python&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Kotlin&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Scala&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Apache Druid&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Apache Kafka&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Hadoop&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Apache Spark&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Docker&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Amazon Web Services&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; SQL&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Typescript&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Angular&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CSS&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Bash&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Avro&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Scrum&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Kanban&lt;/li&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Avro&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Feel free to get in touch with me at &lt;a href=&#34;mailto:dave@cloventt.net&#34; &gt;dave@cloventt.net&lt;/a&gt;. I use ProtonMail and if you do too, our conversation will be end-to-end encrypted.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

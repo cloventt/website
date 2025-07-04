@@ -4,7 +4,8 @@
     <title>Authors on cloventt</title>
     <link>https://cloventt.net/authors/</link>
     <description>Recent content in Authors on cloventt</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://cloventt.net/authors/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://cloventt.net/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
